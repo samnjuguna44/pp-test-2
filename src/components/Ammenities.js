@@ -30,6 +30,7 @@ import {
 import { HiBuildingOffice } from "react-icons/hi2";
 import { CgGym } from "react-icons/cg";
 import { BsCheckLg, BsFacebook, BsPinterest } from "react-icons/bs";
+import { BiPencil } from "react-icons/bi";
 
 export default function Ammenities() {
   return (
@@ -37,12 +38,29 @@ export default function Ammenities() {
       <div className="ammenity">
         <section>
           <h2>Crowne Plaza Nairobi Airport</h2>
-          <p>Embakasi</p>
+          <p className="ammenity-location">Embakasi</p>
+          <div className="ammenity-icons">
+            <p>
+              <BiPencil />
+              <small>Review</small>
+            </p>
+            <p>
+              <AiOutlineHeart />
+              <small>Save</small>
+            </p>
+            <p>
+              <small>Share</small>
+              <RiFacebookBoxFill color="#4267b2" />
+              <AiFillTwitterSquare color="#1da1f2" />
+            </p>
+          </div>
         </section>
         <section>
-          <h2>$147</h2>
-          <p>per night</p>
-          <button>view room</button>
+          <h3>$147</h3>
+          <div className="ammenity-small">
+            <span className="ammenity-small-span">per night</span>
+            <button className="ammenity-small-button">View Rooms</button>
+          </div>
         </section>
       </div>
 
@@ -368,16 +386,66 @@ const BarStyles = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    .ammenity-icons {
+      display: flex;
+      gap: 28px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      color: #333333;
+    }
+
+    h2 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      color: #000000;
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 24px;
+      color: #cc2127;
+    }
+
+    .ammenity-small {
+      display: flex;
+      flex-direction: column;
+
+      .ammenity-small-span {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        color: #666666;
+      }
+
+      .ammenity-small-button {
+        border: 2px solid #e57819;
+        border-radius: 5px;
+        background: #ffffff;
+        color: #e57819;
+        width: 104px;
+        height: 50px;
+      }
+    }
   }
 
   .ammenity_shortcuts {
     padding: 10px 0;
     border-top: 2px #d9d9d9 solid;
     border-bottom: 2px #d9d9d9 solid;
+
     a {
       text-decoration: none;
       color: inherit;
       margin-right: 10px;
+    }
+
+    .ammenity-location {
+      font-weight: 500;
+      font-size: 21px;
+      color: #666666;
     }
   }
 
