@@ -1,5 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { BsFacebook, BsPinterest } from "react-icons/bs";
+import {
+  AiFillTwitterCircle,
+  AiFillInstagram,
+  AiFillYoutube,
+} from "react-icons/ai";
 
 export default function Footer() {
   return (
@@ -36,24 +42,49 @@ export default function Footer() {
             </div>
             <div className="col-md-2">
               <p>Get our newsletter and stay current on deals and specials</p>
-              <div class="wrap">
+              <div className="wrap">
                 <div class="search-footer">
-                   <input type="text" className="searchTerm" placeholder="Email Address"/>
-                   <button type="submit" className="searchButton">
-                     Subscribe
+                  <input
+                    type="text"
+                    className="searchTerm"
+                    placeholder="Email Address"
+                  />
+                  <button type="submit" className="searchButton">
+                    Subscribe
                   </button>
                 </div>
               </div>
               <br></br>
               <p>Get the Ticketsasa app</p>
+              <div className="wrap">
+                <div className="search-down">
+                  <input
+                    type="text"
+                    className="search-down-input"
+                    placeholder="Your mobile number"
+                  />
+                  <button type="submit" className="searchButton">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
             </div>
-
           </div>
         </section>
       </div>
-      <div className="down">
-        <section>© 2022 Ticketsasa, a Pesapal company. All rights</section>
-        <section>fb</section>
+      <div className="down-footer">
+        <section>
+          <p>© 2022 Ticketsasa, a Pesapal company. All rights reserved</p>
+        </section>
+        <section>
+          <div className="footer-icons">
+            <BsFacebook size={22} color="#333333" />
+            <AiFillTwitterCircle size={22} color="#333333" />
+            <AiFillInstagram size={22} color="#333333" />
+            <AiFillYoutube size={22} color="#333333" />
+            <BsPinterest size={22} color="#333333" />
+          </div>
+        </section>
       </div>
     </BarStyles>
   );
@@ -73,44 +104,89 @@ const BarStyles = styled.div`
     }
 
     .search-footer {
-       width: 403px;
-       height: 42px;
-       position: relative;
-       display: flex;
+      width: 403px;
+      height: 42px;
+      position: relative;
+      display: flex;
     }
 
     .searchTerm {
-        width: 403px;
-        border: 1px solid #d9d9d9;
-        border-right: none;
-        padding: 5px;
-        height: 42px;
-        border-radius: 5px;
-        outline: none;
-        color: #9DBFAF;
+      width: 403px;
+      border: 1px solid #d9d9d9;
+      border-right: none;
+      padding: 5px;
+      height: 42px;
+      border-radius: 5px;
+      outline: none;
+      color: #9dbfaf;
+
+      ::placeholder {
+        padding: 20px;
+        color: #666666;
+      }
     }
 
     .searchButton {
-        width: 88px;
-        height: 42px;
-        background: #cc2127;
-        border-radius: 0px 5px 5px 0px;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 14px;
-        color: #ffffff;
-        border: none;
+      width: 88px;
+      height: 42px;
+      background: #cc2127;
+      border-radius: 0px 5px 5px 0px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      color: #ffffff;
+      border: none;
+    }
+
+    .search-down {
+      width: 403px;
+      height: 42px;
+      position: relative;
+      display: flex;
+    }
+
+    .search-down-input {
+      width: 403px;
+      height: 42px;
+      border: 1px solid #d9d9d9;
+      border-right: none;
+      padding: 5px;
+      height: 42px;
+      border-radius: 5px;
+      outline: none;
+      color: #9dbfaf;
+
+      ::placeholder {
+        padding: 20px;
+        color: #666666;
+      }
     }
   }
-  .down {
-    background-color: #d9d9d9;
+
+  .down-footer {
+    background-color: #bbbbbb;
     padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
+    p {
+      margin-left: 50px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      color: #666666;
+    }
+
+    .footer-icons {
+      display: flex;
+      gap: 10px;
+      margin-right: 10px;
+    }
+
     @media (max-device: 1000px) {
       flex-direction: column;
+      align-items: center;
     }
   }
 `;

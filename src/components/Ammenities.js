@@ -6,9 +6,6 @@ import {
   AiOutlineHeart,
   AiOutlineLine,
   AiFillTwitterSquare,
-  AiFillTwitterCircle,
-  AiFillInstagram,
-  AiFillYoutube,
 } from "react-icons/ai";
 import {
   RiFacebookBoxFill,
@@ -31,7 +28,7 @@ import {
 } from "react-icons/fa";
 import { HiBuildingOffice } from "react-icons/hi2";
 import { CgGym } from "react-icons/cg";
-import { BsCheckLg, BsFacebook, BsPinterest } from "react-icons/bs";
+import { BsCheckLg } from "react-icons/bs";
 import { BiPencil } from "react-icons/bi";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
@@ -220,6 +217,19 @@ export default function Ammenities() {
                 >
                   Change
                 </button>
+                <div ref={refOne}>
+                  {openDate && (
+                    <DateRange
+                      editableDateInputs={true}
+                      onChange={(item) => setDate([item.selection])}
+                      moveRangeOnFirstSelection={false}
+                      months={2}
+                      ranges={date}
+                      direction="horizontal"
+                      className="date"
+                    />
+                  )}
+                </div>
               </div>
             </div>
             <div className="room-components col-md-6">
@@ -232,87 +242,78 @@ export default function Ammenities() {
                 >
                   Change
                 </button>
+                <div ref={refOne}>
+                  {openOptions && (
+                    <div className="options">
+                      <div className="option_item">
+                        <span className="option_span">Adult</span>
+                        <div className="optionCounter">
+                          <button
+                            disabled={options.adult <= 1}
+                            className="optionCounterButton"
+                            onClick={() => handleOption("adult", "d")}
+                          >
+                            -
+                          </button>
+                          <span className="optionCounterNumber">
+                            {options.adult}
+                          </span>
+                          <button
+                            className="optionCounterButton"
+                            onClick={() => handleOption("adult", "i")}
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+                      <div className="option_item">
+                        <span className="option_span">Children</span>
+                        <div className="optionCounter">
+                          <button
+                            disabled={options.children <= 0}
+                            className="optionCounterButton"
+                            onClick={() => handleOption("children", "d")}
+                          >
+                            -
+                          </button>
+                          <span className="optionCounterNumber">
+                            {options.children}
+                          </span>
+                          <button
+                            className="optionCounterButton"
+                            onClick={() => handleOption("children", "i")}
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+                      <div className="option_item">
+                        <span className="option_span">Room</span>
+                        <div className="optionCounter">
+                          <button
+                            disabled={options.room <= 1}
+                            className="optionCounterButton"
+                            onClick={() => handleOption("room", "d")}
+                          >
+                            -
+                          </button>
+                          <span className="optionCounterNumber">
+                            {options.room}
+                          </span>
+                          <button
+                            className="optionCounterButton"
+                            onClick={() => handleOption("room", "i")}
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div ref={refOne}>
-          {openOptions && (
-            <div className="options">
-              <div className="option_item">
-                <span className="option_span">Adult</span>
-                <div className="optionCounter">
-                  <button
-                    disabled={options.adult <= 1}
-                    className="optionCounterButton"
-                    onClick={() => handleOption("adult", "d")}
-                  >
-                    -
-                  </button>
-                  <span className="optionCounterNumber">{options.adult}</span>
-                  <button
-                    className="optionCounterButton"
-                    onClick={() => handleOption("adult", "i")}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-              <div className="option_item">
-                <span className="option_span">Children</span>
-                <div className="optionCounter">
-                  <button
-                    disabled={options.children <= 0}
-                    className="optionCounterButton"
-                    onClick={() => handleOption("children", "d")}
-                  >
-                    -
-                  </button>
-                  <span className="optionCounterNumber">
-                    {options.children}
-                  </span>
-                  <button
-                    className="optionCounterButton"
-                    onClick={() => handleOption("children", "i")}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-              <div className="option_item">
-                <span className="option_span">Room</span>
-                <div className="optionCounter">
-                  <button
-                    disabled={options.room <= 1}
-                    className="optionCounterButton"
-                    onClick={() => handleOption("room", "d")}
-                  >
-                    -
-                  </button>
-                  <span className="optionCounterNumber">{options.room}</span>
-                  <button
-                    className="optionCounterButton"
-                    onClick={() => handleOption("room", "i")}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-        <div ref={refOne}>
-          {openDate && (
-            <DateRange
-              editableDateInputs={true}
-              onChange={(item) => setDate([item.selection])}
-              moveRangeOnFirstSelection={false}
-              months={2}
-              ranges={date}
-              direction="horizontal"
-              className="date"
-            />
-          )}
         </div>
 
         <div className="cards row">
@@ -856,22 +857,20 @@ const BarStyles = styled.div`
     .date {
       z-index: 999;
       position: absolute;
+      left: -40px
 
     }
 
     .options {
       z-index: 100;
       position: absolute;
-      left: 750px;
+      left: 20px;
       background-color: #ffff;
       color: #000000;
       border-radius: 5px;
       -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
       box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
 
-      /* @media (max-device: 1000px) {
-        float: left
-      } */
 
       .option_item {
         width: 200px;
