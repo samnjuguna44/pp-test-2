@@ -868,6 +868,7 @@ const BarStyles = styled.div`
       z-index: 999;
       position: absolute;
       left: -40px;
+      background-color: #ffff;
 
       @media (max-width: 1000px){
         width: 420px;
