@@ -860,7 +860,13 @@ const BarStyles = styled.div`
     .date {
       z-index: 999;
       position: absolute;
-      left: -40px
+      left: -40px;
+
+      @media (max-width: 1000px){
+        width: 420px;
+        left: 10px;
+    }
+
 
     }
 
