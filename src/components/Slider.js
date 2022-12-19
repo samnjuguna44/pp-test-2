@@ -168,4 +168,8 @@ const SliderStyles = styled.div`
   }
 `;
 
-const ModalStyles = styled.div``;
+const ModalStyles = styled.div`
+   button {
+    color: #e57819;
+   }
+`;
