@@ -107,26 +107,26 @@ export default function Ammenities() {
           <h3>$147</h3>
           <div className="ammenity-small">
             <span className="ammenity-small-span">per night</span>
-            <button className="ammenity-small-button">View Rooms</button>
+            <button className="ammenity-small-button"><a href="#packages">View Rooms</a></button>
           </div>
         </section>
       </div>
 
       <div className="ammenity_shortcuts">
-        <a href="h"> Photos</a>
-        <a href="h"> Ammenities</a>
-        <a href="h"> Packages</a>
-        <a href="h"> Description</a>
-        <a href="h"> Features</a>
-        <a href="h"> Location</a>
-        <a href="h"> Fine Print</a>
+        <a href="#photos"> Photos</a>
+        <a href="#ammenities"> Ammenities</a>
+        <a href="#packages"> Packages</a>
+        <a href="#description"> Description</a>
+        <a href="#features"> Features</a>
+        <a href="#location"> Location</a>
+        <a href="#fineprint"> Fine Print</a>
       </div>
 
-      <div className="slider">
+      <div className="slider" id="photos">
         <Slider />
       </div>
 
-      <div className="ammenities">
+      <div className="ammenities" id="ammenities">
         <h2>Ammenities</h2>
         <AiOutlineLine size={30} color="#cc2127" className="line" />
         <div className="row">
@@ -200,7 +200,7 @@ export default function Ammenities() {
         </p>
       </div>
 
-      <div className="packages">
+      <div className="packages" id="packages">
         <h2>Available Packages</h2>
         <div className="package-components">
           <div className="row">
@@ -574,7 +574,7 @@ export default function Ammenities() {
         </div>
       </div>
 
-      <div className="description">
+      <div className="description" id="description">
         <h2>Description</h2>
         <AiOutlineLine size={30} color="#cc2127" className="line" />
         <p className="paragraph_description">
@@ -588,7 +588,7 @@ export default function Ammenities() {
         <p className="paragraph_description3">"Tembea Kenya"</p>
       </div>
 
-      <div className="features">
+      <div className="features" id="features">
         <h2>Features</h2>
         <AiOutlineLine size={30} color="#cc2127" className="line" />
         <p className="features_paragraph">
@@ -607,7 +607,7 @@ export default function Ammenities() {
         </p>
       </div>
 
-      <div className="location">
+      <div className="location" id="location">
         <h2>Location</h2>
         <AiOutlineLine size={30} color="#cc2127" className="line" />
         <div class="embed-responsive embed-responsive-21by9">
@@ -620,7 +620,7 @@ export default function Ammenities() {
         </div>
       </div>
 
-      <div className="fine-print">
+      <div className="fine-print" id="fineprint">
         <h2>Fine Print</h2>
         <AiOutlineLine size={30} color="#cc2127" className="line" />
         <p className="fineprint_paragraph">
@@ -704,6 +704,12 @@ const BarStyles = styled.div`
         color: #e57819;
         width: 104px;
         height: 50px;
+        outline: none;
+
+        a {
+          text-decoration: none;
+          color: #e57819;
+        }
       }
     }
   }
@@ -824,6 +830,7 @@ const BarStyles = styled.div`
         border: none;
         margin-right: 10px;
         margin-top: 15px;
+        outline: none;
       }
     }
   }
@@ -890,6 +897,7 @@ const BarStyles = styled.div`
        color: #000000;
        cursor: pointer;
        background: transparent;
+       outline: none;
      }
 
      .optionCounterButton:disabled {
@@ -924,7 +932,8 @@ const BarStyles = styled.div`
         height: 42px;
         margin-left: 100px;
         position: relative;
-        top: -20px
+        top: -20px;
+        outline: none;
       }
     }
 
@@ -948,7 +957,8 @@ const BarStyles = styled.div`
         height: 42px;
         margin-left: 100px;
         position: relative;
-        top: -20px
+        top: -20px;
+        outline: none;
       }
     }
   }

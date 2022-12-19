@@ -50,6 +50,7 @@ const BarStyles = styled.div`
             background: #f5f5f5;
             border: 1px solid #d9d9d9;
             border-radius: 5px;
+            outline: none;
 
             @media (max-width: 1000px){
                 width: 100%;
