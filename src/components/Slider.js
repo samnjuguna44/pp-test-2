@@ -127,14 +127,14 @@ export default function Slider() {
       </div>
 
       {/* modals */}
-      <div ref={refOne}>
+      {/* <div ref={refOne}> */}
         <Modal size="lg" isOpen={openModal}>
           <ModalStyles>
             <button onClick={() => setOpenModal(false)}>close</button>
             <ImageGallery items={sliderImages} />;
           </ModalStyles>
         </Modal>
-      </div>
+      {/* </div> */}
     </SliderStyles>
   );
 }
