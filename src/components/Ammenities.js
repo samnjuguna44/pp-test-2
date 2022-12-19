@@ -865,6 +865,7 @@ const BarStyles = styled.div`
       @media (max-width: 1000px){
         width: 420px;
         left: 10px;
+        cursor: pointer;
     }
 
 
