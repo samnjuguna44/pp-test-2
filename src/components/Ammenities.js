@@ -210,7 +210,6 @@ export default function Ammenities() {
                 date[0].endDate,
                 "MM/dd/yyyy"
               )}`}</small>
-              <div>
                 <button
                   onClick={() => setOpenDate(!openDate)}
                   className="date-button"
@@ -230,12 +229,10 @@ export default function Ammenities() {
                     />
                   )}
                 </div>
-              </div>
             </div>
             <div className="room-components col-md-6">
               <p>Guests:</p>
               <small>{`${options.adult} adult . ${options.children} children .${options.room} room`}</small>
-              <div>
                 <button
                   onClick={() => setOpenOptions(!openOptions)}
                   className="room-button"
@@ -311,7 +308,6 @@ export default function Ammenities() {
                     </div>
                   )}
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -913,6 +909,7 @@ const BarStyles = styled.div`
       font-style: normal;
       font-weight: 700;
       font-size: 14px;
+      justify-content: space-between;
 
       small {
         color: #e57819;
@@ -925,6 +922,9 @@ const BarStyles = styled.div`
         color: #e57819;
         width: 125px;
         height: 42px;
+        margin-left: 100px;
+        position: relative;
+        top: -20px
       }
     }
 
@@ -946,6 +946,9 @@ const BarStyles = styled.div`
         color: #e57819;
         width: 125px;
         height: 42px;
+        margin-left: 100px;
+        position: relative;
+        top: -20px
       }
     }
   }
