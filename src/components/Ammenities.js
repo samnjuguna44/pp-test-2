@@ -221,6 +221,7 @@ export default function Ammenities() {
                     <DateRange
                       editableDateInputs={true}
                       onChange={(item) => setDate([item.selection])}
+                      onTouchStart={(item) => setDate([item.selection])}
                       moveRangeOnFirstSelection={false}
                       months={2}
                       ranges={date}
@@ -870,7 +871,7 @@ const BarStyles = styled.div`
 
       @media (max-width: 1000px){
         width: 420px;
-        left: 10px;
+        left: -10px;
         cursor: pointer;
     }
 
@@ -947,6 +948,10 @@ const BarStyles = styled.div`
         position: relative;
         top: -20px;
         outline: none;
+
+        @media (max-width: 500px){
+            margin-left: 50px 
+        }
       }
     }
 
@@ -972,6 +977,12 @@ const BarStyles = styled.div`
         position: relative;
         top: -20px;
         outline: none;
+
+        @media (max-width: 500px){
+            margin-left: 50px 
+        }
+
+
       }
     }
   }
