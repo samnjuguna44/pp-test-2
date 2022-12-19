@@ -841,6 +841,12 @@ const BarStyles = styled.div`
     padding: 5px;
     gap: 5px;
 
+    @media (max-width: 1000px){
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
     p {
       display: flex;
       gap: 5px;
