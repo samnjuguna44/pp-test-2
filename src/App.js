@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Breadcrumbs from './components/Breadcrumbs';
 import Ammenities from './components/Ammenities';
 import Footer from './components/Footer';
+import { inject } from '@vercel/analytics';
 
 function App() {
   return (
@@ -18,3 +19,4 @@ function App() {
 }
 
 export default App;
+inject();
